@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:5000";
 
 function App() {
   const [username, setUsername] = useState("admin");
   const [password, setPassword] = useState("password123");
-  const [token, setToken] = useState("");
-  const [message, setMessage] = useState("");
+  const [token, setToken] = useState(localStorage.getItem("token") || "");  const [message, setMessage] = useState("");
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
 
@@ -33,6 +32,7 @@ function App() {
         return;
       }
 
+      localStorage.setItem("token", result.token);
       setToken(result.token);
       setMessage("Login successful. User authenticated.");
     } catch (err) {
@@ -66,6 +66,7 @@ function App() {
   }
 
   function logout() {
+    localStorage.removeItem("token");
     setToken("");
     setMessage("");
     setData([]);
