@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:5000";
 
 function App() {
   const [username, setUsername] = useState("admin");
@@ -14,7 +15,7 @@ function App() {
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/login", {
+      const response = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +44,7 @@ function App() {
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/message", {
+      const response = await fetch(`${API_URL}/api/message`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -76,7 +77,7 @@ function App() {
       <section className="card">
         <h1>The Realm of Suffering</h1>
         <p className="subtitle">
-          A dark and mysterious place where i continue to suffer. 
+          A dark and mysterious place where I continue to suffer. 
         </p>
 
         {!token ? (
