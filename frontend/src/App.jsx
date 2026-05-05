@@ -33,7 +33,7 @@ function App() {
       }
 
       setToken(result.token);
-      setMessage("Login successful. You are authenticated.");
+      setMessage("Login successful. User authenticated.");
     } catch (err) {
       setError("Could not connect to backend.");
     }

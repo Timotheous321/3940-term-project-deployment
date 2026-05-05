@@ -19,7 +19,7 @@ body {
 
 .card {
   width: 100%;
-  max-width: 520px;
+  max-width: 680px;
   background: #1f2937;
   border: 1px solid #374151;
   border-radius: 16px;
@@ -27,14 +27,30 @@ body {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
-h1 {
-  margin-top: 0;
-  margin-bottom: 8px;
+
+ h1 {
+  margin: 0 0 12px 0;
+  font-size: 40px;
+  line-height: 1.15;
+  text-align: center;
+  white-space: normal;
 }
+
+.card h1 {
+  font-size: 40px;
+  line-height: 1.15;
+}
+
+.title-break {
+  display: inline;
+}
+
 
 .subtitle {
   color: #cbd5e1;
-  margin-bottom: 24px;
+  margin: 0 0 28px 0;
+  text-align: center;
+  font-size: 18px;
 }
 
 .form {
